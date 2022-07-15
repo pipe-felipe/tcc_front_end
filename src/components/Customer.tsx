@@ -1,13 +1,13 @@
 import {useFetch} from "../hooks/useFetch";
 
-type ProfilePicture  = {
+type ProfilePicture = {
     message: string
     status: string
 }
 
 export default function Customer() {
 
-    const { data } = useFetch<ProfilePicture>("https://dog.ceo/api/breeds/image/random")
+    const {data} = useFetch<ProfilePicture>("https://dog.ceo/api/breeds/image/random")
 
     return (
 
