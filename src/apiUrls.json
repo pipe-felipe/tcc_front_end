@@ -1,0 +1,4 @@
+{
+  "dogProfile": "https://dog.ceo/api/breeds/image/random",
+  "user": "http://localhost:8080/customer"
+}
