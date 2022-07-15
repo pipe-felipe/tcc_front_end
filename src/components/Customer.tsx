@@ -1,4 +1,5 @@
 import {useFetch} from "../hooks/useFetch";
+import Url from "../apiUrls.json"
 
 type ProfilePicture = {
     message: string
@@ -7,7 +8,7 @@ type ProfilePicture = {
 
 export default function Customer() {
 
-    const {data} = useFetch<ProfilePicture>("https://dog.ceo/api/breeds/image/random")
+    const {data} = useFetch<ProfilePicture>(Url.dogProfile)
 
     return (
 
@@ -16,12 +17,12 @@ export default function Customer() {
                 <div className="
                         z-50
                         translate-y-1.5
-                        bg-blue-300
+                        bg-amber-50
                         w-20 h-20
                         rounded-3xl
                         flex
                         ">
-                    <img className="object-fill w-20 h-20 p-1 rounded-3xl" src={data?.message} alt="dog"/>
+                    <img className="object-fill border-2 w-20 h-20 rounded-3xl" src={data?.message} alt="dog"/>
                 </div>
             </div>
 
