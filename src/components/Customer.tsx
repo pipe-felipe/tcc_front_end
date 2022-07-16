@@ -39,10 +39,10 @@ export default function Customer() {
   const { data: userData } = useFetch<User[]>(Url.user)
 
   return (
-    <div className="h-72 w-72 bg-amber-800">
+    <div>
       {userData?.map((user) => {
         return (
-          <div>
+          <div className="h-72 w-72 mt-1">
             <div className="flex items-center justify-center">
               <div className="z-50 flex h-20 w-20 translate-y-1.5 rounded-3xl bg-amber-50">
                 <img className="h-20 w-20 rounded-3xl border-2 object-fill" src={dogProfile?.message} alt="dogs" />
@@ -55,6 +55,13 @@ export default function Customer() {
                   type="text"
                   readOnly={true}
                   className="ml-1 mr-1 w-11/12 rounded-md border p-1"
+                  name="name"
+                  value={user.name}
+                />
+                <input
+                  type="text"
+                  readOnly={true}
+                  className="mt-1 ml-1 mr-1 w-11/12 rounded-md border p-1"
                   name="document"
                   value={user.document}
                 />
@@ -62,28 +69,20 @@ export default function Customer() {
                   type="text"
                   readOnly={true}
                   className="mt-1 ml-1 mr-1 w-11/12 rounded-md border p-1"
-                  name="document"
-                  value="55448487569"
+                  name="email"
+                  value={user.email}
                 />
                 <input
                   type="text"
                   readOnly={true}
                   className="mt-1 ml-1 mr-1 w-11/12 rounded-md border p-1"
-                  name="document"
-                  value="55448487569"
-                />
-                <input
-                  type="text"
-                  readOnly={true}
-                  className="mt-1 ml-1 mr-1 w-11/12 rounded-md border p-1"
-                  name="document"
-                  value="55448487569"
+                  name="transactionCount"
+                  value={user.transactionCount}
                 />
               </div>
             </div>
           </div>
-        )
-      })}
+        )})}
     </div>
   )
 }
