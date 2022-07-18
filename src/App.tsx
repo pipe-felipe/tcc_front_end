@@ -1,11 +1,11 @@
-import {useState} from 'react'
-import Customer from "./components/Customer";
+import { useState } from "react"
+import Customers from "./components/Customers"
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <Customer />
+    <Customers />
   )
 }
 
