@@ -12,17 +12,28 @@ export default function Customers() {
 
   const handlerPageClick = (data: any) => {
     console.log(data.selected)
+
+    let currentPage = data.selected + 1
+
   }
 
   return (
     <>
       <ReactPaginate
-        previousLabel={"Before"}
-        nextLabel={"Next"}
+        previousLabel={"<<"}
+        nextLabel={">>"}
         breakLabel={"..."}
         pageCount={25}
         marginPagesDisplayed={3}
         onPageChange={handlerPageClick}
+        containerClassName={"ul-class"}
+        pageClassName={"page-class"}
+        pageLinkClassName={"page-link"}
+        previousClassName={"page-class"}
+        previousLinkClassName={"page-link"}
+        nextClassName={"page-class"}
+        breakLinkClassName={"page-link"}
+        activeClassName={"active"}
       />
 
       {data.map((customer) => {
